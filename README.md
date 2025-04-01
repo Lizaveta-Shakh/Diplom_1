@@ -10,10 +10,12 @@
 
 ### Структура проекта
 
-- `praktikum` - пакет, содержащий код программы
-- `tests` - пакет, содержащий тесты, разделенные по классам. Например, `bun_test.py`, `burger_test.py` и т.д.
-
+- 'helpers' - содержит файл data с тестовыми данными, необходимыми для проведения тестов
+- `tests` - пакет, содержащий тесты, разделенные по классам: test_bun, test_Burger, test_Database, test_ingredient
+- файл conftest содержит моки, вынесенные в фикстуры
 ### Запуск автотестов
+
+> 'pytest -v'
 
 **Установка зависимостей**
 
@@ -21,4 +23,4 @@
 
 **Запуск автотестов и создание HTML-отчета о покрытии**
 
->  `$ pytest --cov=praktikum --cov-report=html`
+>  `$ pytest --cov=source_code.bun --cov=source_code.ingredient --cov=source_code.burger --cov=source_code.database --cov-report=html`
