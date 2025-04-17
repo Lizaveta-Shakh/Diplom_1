@@ -14,19 +14,19 @@ from helpers.data import BUNS_INFO, INGREDIENTS_INFO
 from ingredient import Ingredient
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def burger():
     return Burger()
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def mock_create_buns():
     bun_mock = MagicMock(spec=Bun)
     bun_mock.get_name.return_value = BUNS_INFO[0]["bun_name"]
     bun_mock.get_price.return_value = BUNS_INFO[0]["bun_price"]
     return bun_mock
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def mock_create_ingredient():
     ingredient_mock = MagicMock(spec=Ingredient)
 
@@ -36,7 +36,7 @@ def mock_create_ingredient():
 
     return ingredient_mock
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def mock_create_additional_ingredient():
     ingredient_mock_2 = MagicMock(spec=Ingredient)
 
@@ -46,6 +46,6 @@ def mock_create_additional_ingredient():
 
     return ingredient_mock_2
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def db():
     return Database()
